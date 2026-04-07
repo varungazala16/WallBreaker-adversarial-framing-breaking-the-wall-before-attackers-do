@@ -1,0 +1,39 @@
+# ContextGuard — User Permission Definitions
+# Each user is assigned a list of roles. Document access is granted
+# when the querying user holds at least one of the document's allowed_roles.
+
+users:
+  alice:
+    display_name: "Alice Chen (Equity Analyst)"
+    roles:
+      - public
+      - equity_desk
+      - user_alice
+
+  bob:
+    display_name: "Bob Smith (Credit Analyst)"
+    roles:
+      - public
+      - credit_desk
+      - user_bob
+
+  carol:
+    display_name: "Carol Davis (M&A Associate)"
+    roles:
+      - public
+      - m_and_a
+
+  external_client:
+    display_name: "External Client (Public Access Only)"
+    roles:
+      - public
+
+  admin:
+    display_name: "Admin (Full Access)"
+    roles:
+      - public
+      - equity_desk
+      - credit_desk
+      - m_and_a
+      - user_alice
+      - user_bob
